@@ -1,0 +1,16 @@
+{
+  "name": "shortur",
+  "version": "1.0.0",
+  "description": "Url shortener Free Code Camp API project",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Pieter Stokkink",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^4.0.0",
+    "express": "^4.14.0",
+    "mongodb": "^2.2.20"
+  }
+}
