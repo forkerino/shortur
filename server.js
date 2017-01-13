@@ -22,7 +22,7 @@ app.get('/api/shorturl/new/*', function(req, res){
 app.get('/:shortur', function(req, res){
 	let shortur = Number(req.params.shortur);
 	if (isNaN(shortur)) {
-		res.end('invalid short_url, go to ' + req.headers.host + '/api/shorturl/new to create a shortur url' );
+		res.end('<p>invalid short_url, go <a href="' + req.headers.host + '/api/shorturl/new ">here</a> to create a shortur url.</p>' );
 	}
 	mongo.connect(dburl, function(err,db){
 		if (err) throw err;
@@ -31,7 +31,7 @@ app.get('/:shortur', function(req, res){
 			if (err) throw err;
 			if (doc.length == 0) {
 				db.close();
-				res.end('invalid short_url, go to ' + req.headers.host + '/api/shorturl/new to create a shortur url' );
+				res.end('<p>invalid short_url, go <a href="' + req.headers.host + '/api/shorturl/new ">here</a> to create a shortur url.</p>' );
 			} else {
 				let url = doc[0]["original_url"];
 				db.close();
